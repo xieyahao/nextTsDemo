@@ -2,7 +2,6 @@ import { generateYAxis } from '@/app/lib/utils';
 import { CalendarIcon } from '@heroicons/react/24/outline';
 
 import { Revenue } from '@/app/lib/definitions';
-
 // This component is representational only.
 // For data visualization UI, check out:
 // https://www.tremor.so/
@@ -17,15 +16,15 @@ export default async function RevenueChart({
   const chartHeight = 350;
   // NOTE: Uncomment this code in Chapter 7
 
-  // const { yAxisLabels, topLabel } = generateYAxis(revenue);
+  const { yAxisLabels, topLabel } = generateYAxis(revenue);
 
-  // if (!revenue || revenue.length === 0) {
-  //   return <p className="mt-4 text-gray-400">No data available.</p>;
-  // }
+  if (!revenue || revenue.length === 0) {
+    return <p className="mt-4 text-gray-400">No data available.</p>;
+  }
 
   return (
     <div className="w-full md:col-span-4">
-      <h2 className={` mb-4 text-xl md:text-2xl`}>
+      <h2 className={`mb-4 text-xl md:text-2xl`}>
         Recent Revenue
       </h2>
       {/* NOTE: Uncomment this code in Chapter 7 */}
